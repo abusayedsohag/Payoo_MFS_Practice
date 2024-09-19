@@ -26,7 +26,7 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
 
             //Step-5.2: Now Get Total Or New Balance
             const newBalance = addMoneyNum + mainBalanceNum;
-            console.log(newBalance)
+            // console.log(newBalance);
 
         //Step-6: Update the Balance in Balance section
         document.getElementById('balance').innerText = newBalance;
@@ -65,7 +65,7 @@ document.getElementById('cash-out-btn').addEventListener('click', function(event
 
             //Step-5.2: Now Get Total Or New Balance
             const newBalance = mainBalanceNum - cashOutNum;
-            console.log(newBalance)
+            // console.log(newBalance);
 
         //Step-6: Update the Balance in Balance section
         document.getElementById('balance').innerText = newBalance;
@@ -73,4 +73,16 @@ document.getElementById('cash-out-btn').addEventListener('click', function(event
     else {
         alert('Get Input Currect Pin');
     }
+});
+
+// Add Money and Cash out Form Toggle
+
+document.getElementById('cashoutBtn').addEventListener('click', function(){
+    document.getElementById('cashOut').classList.remove('hidden');
+    document.getElementById('cashIn').classList.add('hidden');
+});
+
+document.getElementById('addBtn').addEventListener('click', function(){
+    document.getElementById('cashIn').classList.remove('hidden');
+    document.getElementById('cashOut').classList.add('hidden');
 });
