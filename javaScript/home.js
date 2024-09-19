@@ -35,3 +35,42 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
         alert('Get Input Currect Pin');
     }
 });
+
+
+// Cash Out to the account 
+
+document.getElementById('cash-out-btn').addEventListener('click', function(event){
+    // Prevent page reload
+    event.preventDefault();
+
+    //step -1: need Money Value
+    const cashOut = document.getElementById('money-value-out').value;
+    // console.log(addMoney);
+
+    //step-2: pin number validation
+    const pinOut = document.getElementById('pin-value-out').value;
+    // console.log(pinValue);
+
+    //Step-3: Verify Pin number
+    if(pinOut === '1234') {
+        // console.log('Done');
+        //Get the Current Balance
+        const mainBalance = document.getElementById('balance').innerText;
+        // console.log(mainBalance);
+
+        //step-5: add money in mainBalance
+            //Step-5.1 : String number to number
+            const cashOutNum = parseFloat(cashOut);
+            const mainBalanceNum = parseFloat(mainBalance);
+
+            //Step-5.2: Now Get Total Or New Balance
+            const newBalance = mainBalanceNum - cashOutNum;
+            console.log(newBalance)
+
+        //Step-6: Update the Balance in Balance section
+        document.getElementById('balance').innerText = newBalance;
+    }
+    else {
+        alert('Get Input Currect Pin');
+    }
+});
