@@ -18,12 +18,15 @@
                     <div class="stat">
                       <div id="balance" class="stat-value">89400</div>
                     </div>
-                  </div><div class="divider "></div>
+                  </div>
+                  <div class="divider "></div>
                   <!-- Button -->
-                   <div>
-                    <button id="addBtn" class="btn btn-lg">Add Money</button>
-                    <button id="cashoutBtn" class="btn btn-lg">Cash Out</button>
-                   </div>
+                   <div class="grid grid-cols-4 grid-rows-2 gap-2">
+                    <button id="addBtn" class="btn btn-lg col-span-2">Add Money</button>
+                    <button id="cashoutBtn" class="btn btn-lg col-span-2">Cash Out</button>
+                    <button id="transBtn" class="btn btn-lg col-span-4">Transaction</button>
+                  </div>
+                  <div id="dividerTrans" class="divider hidden"></div>
                  <div id="cashIn">
                       <!-- Action Form -->
                   <form class="card-body">
@@ -65,6 +68,12 @@
                       <button id="cash-out-btn" class="btn btn-primary">Cash Out</button>
                     </div>
                   </form>
+                  <!-- Cash Out End -->
+                </div>
+                <div id="transHis" class="hidden">
+                    <!-- Cash Out Start -->
+                    <!-- Action Form -->
+                    <h1 class="text-3xl">Transaction History</h1>
                   <!-- Cash Out End -->
                 </div>
               </div>

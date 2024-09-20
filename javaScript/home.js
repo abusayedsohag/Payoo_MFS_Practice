@@ -30,6 +30,12 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
 
         //Step-6: Update the Balance in Balance section
         document.getElementById('balance').innerText = newBalance;
+
+        // Add to Transaction 
+        const text = document.createElement('p');
+        text.innerText = `Add : ${addMoney} Tk. New Balance: ${newBalance}`;
+
+        document.getElementById('transHis').appendChild(text);
     }
     else {
         alert('Get Input Currect Pin');
@@ -69,20 +75,41 @@ document.getElementById('cash-out-btn').addEventListener('click', function(event
 
         //Step-6: Update the Balance in Balance section
         document.getElementById('balance').innerText = newBalance;
+
+        // Add to Transaction 
+        const text = document.createElement('p');
+        text.innerText = `Add : ${cashOut} Tk. New Balance: ${newBalance}`;
+
+        document.getElementById('transHis').appendChild(text);
     }
     else {
         alert('Get Input Currect Pin');
     }
 });
 
-// Add Money and Cash out Form Toggle
 
-document.getElementById('cashoutBtn').addEventListener('click', function(){
-    document.getElementById('cashOut').classList.remove('hidden');
+//show by ID 
+function showById(id) {
+    //get Hidden section
+    document.getElementById('cashOut').classList.add('hidden');
     document.getElementById('cashIn').classList.add('hidden');
-});
+    document.getElementById('transHis').classList.add('hidden');
+
+    //get Show section
+    document.getElementById(id).classList.remove('hidden');
+}
+
+// Add Money and Cash out and Transaction Toggle
 
 document.getElementById('addBtn').addEventListener('click', function(){
-    document.getElementById('cashIn').classList.remove('hidden');
-    document.getElementById('cashOut').classList.add('hidden');
+    showById('cashIn');
+});
+
+document.getElementById('cashoutBtn').addEventListener('click', function(){
+    showById('cashOut');
+});
+
+document.getElementById('transBtn').addEventListener('click', function(){
+    showById('transHis');
+    document.getElementById('dividerTrans').classList.remove('hidden');
 });
